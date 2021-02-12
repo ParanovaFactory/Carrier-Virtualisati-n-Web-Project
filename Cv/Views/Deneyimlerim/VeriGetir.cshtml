@@ -1,0 +1,28 @@
+﻿@model Cv.Models.Entiity.tblExperience
+@{
+    ViewBag.Title = "VeriGetir";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+@using (Html.BeginForm("Guncelle", "Deneyimlerim", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.Id)
+        @Html.TextBoxFor(m => m.Id, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(m => m.Title)
+        @Html.TextBoxFor(m => m.Title, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(m => m.SubTitle)
+        @Html.TextBoxFor(m => m.SubTitle, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(m => m.Date)
+        @Html.TextBoxFor(m => m.Date, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(m => m.Details)
+        @Html.TextBoxFor(m => m.Details, new { @class = "form-control" })
+        <br />
+        <button class="btn btn-primary">Güncelle</button>
+
+    </div>
+}

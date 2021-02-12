@@ -1,0 +1,36 @@
+﻿@using Cv.Models.Entiity
+@using PagedList
+@using PagedList.Mvc
+@model PagedList.IPagedList<tblInterest>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <td>Id</td>
+            <td>Hobi</td>
+            <td>İşlemler</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var x in Model)
+        {
+            <tr>
+                <td>@x.Id</td>
+                <td>@x.Interest</td>
+                <td>
+                    @*<a href="/Hobi/HobiSil/@x.Id" class="btn btn-danger">Sil</a>
+                    *@
+                    @Html.ActionLink("Sil", "HobiSil", new { id = x.Id }, new { @class = "btn btn-danger", onclick = "return confirm('Silmek İstediğinize Eminmisiniz')" })
+                    <a href="/Hobi/VeriGetir/@x.Id" class="btn btn-success">Güncelle</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+@Html.PagedListPager((IPagedList)Model, sayfa => Url.Action("Index", new { sayfa }))
+
+<a href="/Hobi/YeniHobi" class="btn btn-info">Yeni Hobi Ekle</a>

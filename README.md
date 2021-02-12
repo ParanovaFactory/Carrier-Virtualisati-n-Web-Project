@@ -1,1 +1,1 @@
-# Mvc5-Cv-Web-Site
+# Mvc5 platformunda oluşturduğum temel düzey cv web sitesi

@@ -1,0 +1,47 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Cv</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+    <nav class="navbar navbar-inverse" style="background-color:#000000">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/Cvx/Index">Cv</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Kontrol Paneli <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/Hakkimda/Index">Hakkımda</a></li>
+                        <li><a href="/Deneyimlerim/Index">Deneyimlerim</a></li>
+                        <li><a href="/Egitim/Index">Eğitim Hayatım</a></li>
+                        <li><a href="/Yetenekler/Index">Yeteneklerim</a></li>
+                        <li><a href="/Hobi/Index">Hobilerim</a></li>
+                        <li><a href="/Sertifika/Index">Sertifikalarım</a></li>
+                        <li><a href="#">Şifre İşlemleri</a></li>
+                        <li><a href="/Default/Index">Gösterim Sayfasına Dön</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        @RenderBody()
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+﻿@model Cv.Models.Sinif.Class1
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Ad</th>
+            <th>Soyad</th>
+            <th>Adress</th>
+            <th>Telefon</th>
+            <th>Mail</th>
+            <th>Hakkımda</th>
+            <th>İşlemler</th>
+        </tr>
+    </thead>
+    <tbody>
+            @foreach (var x in Model.Deger1)
+            {
+            <tr>
+                <td>@x.Id</td>
+                <td>@x.Name</td>
+                <td>@x.Surname</td>
+                <td>@x.Adderss</td>
+                <td>@x.Phone</td>
+                <td>@x.Mail</td>
+                <td>@x.About</td>
+                <td>
+                    <a href="/Hakkimda/VeriGetir/@x.Id" class="btn btn-success">Güncelle</a>
+                </td>
+            </tr>
+             }
+        </tbody>
+    </table>
+

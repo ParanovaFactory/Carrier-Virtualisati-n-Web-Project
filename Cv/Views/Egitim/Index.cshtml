@@ -1,0 +1,44 @@
+﻿@using Cv.Models.Entiity
+@using PagedList
+@using PagedList.Mvc
+@model PagedList.IPagedList<tblAducation>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Okul</th>
+            <th>Fakülte</th>
+            <th>Bölüm</th>
+            <th>Ortalama</th>
+            <th>İşlemler</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var x in Model)
+        {
+            <tr>
+                <td>@x.Id</td>
+                <td>@x.Title</td>
+                <td>@x.SubTitle</td>
+                <td>@x.Departmet</td>
+                <td>@x.Gpa</td>
+                <td>
+                    @*<a href="/Egitim/EgitimSil/@x.Id" class="btn btn-danger">Sil</a>
+                    *@
+                    @Html.ActionLink("Sil", "EgitimSil", new { id = x.Id }, new { @class = "btn btn-danger", onclick = "return confirm('Silmek İstediğinize Eminmisiniz')" })
+                    <a href="/Egitim/VeriGetir/@x.Id" class="btn btn-success">Güncelle</a>
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+@Html.PagedListPager((IPagedList)Model, sayfa => Url.Action("Index", new { sayfa }))
+
+<a href="/Egitim/YeniEgitim" class="btn btn-info">Yeni Eğitim Ekle</a>
+

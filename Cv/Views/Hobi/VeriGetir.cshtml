@@ -1,0 +1,19 @@
+﻿@model Cv.Models.Entiity.tblInterest
+@{
+    ViewBag.Title = "VeriGetir";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+@using (Html.BeginForm("Guncelle", "Hobi", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.Id)
+        @Html.TextBoxFor(m => m.Id, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(m => m.Interest)
+        @Html.TextBoxFor(m => m.Interest, new { @class = "form-control" })
+        <br />
+        <button class="btn btn-primary">Güncelle</button>
+
+    </div>
+}

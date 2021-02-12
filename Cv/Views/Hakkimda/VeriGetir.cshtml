@@ -1,0 +1,32 @@
+﻿@model Cv.Models.Entiity.tblAbout
+@{
+    ViewBag.Title = "VeriGetir";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+@using (Html.BeginForm("Guncelle", "Hakkimda", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.Id)
+        @Html.TextBoxFor(m => m.Id, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(m => m.Name)
+        @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(m => m.Adderss)
+        @Html.TextBoxFor(m => m.Adderss, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(m => m.Phone)
+        @Html.TextBoxFor(m => m.Phone, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(m => m.Mail)
+        @Html.TextBoxFor(m => m.Mail, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(m => m.About)
+        @Html.TextAreaFor(m => m.About, new { @class = "form-control" })
+        <br />
+        <button class="btn btn-primary">Güncelle</button>
+
+    </div>
+}
+

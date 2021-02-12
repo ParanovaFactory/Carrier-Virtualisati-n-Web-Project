@@ -1,0 +1,41 @@
+﻿@using Cv.Models.Entiity
+@model List<tblAward>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+@using (Html.BeginForm("Index", "Sertifika", FormMethod.Get))
+{
+    <p>
+        Aranacak Değer: @Html.TextBox("p")
+        <input type="submit"value="Ara" />
+    </p>
+}
+
+<table class="table table-bordered">
+<thead>
+    <tr>
+        <td>Id</td>
+        <td>Başarı</td>
+        <td>İşlemler</td>
+    </tr>
+</thead>
+<tbody>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.Id</td>
+            <td>@x.Award</td>
+            <td>
+                @*<a href="/Sertifika/SertifikaSil/@x.Id" class="btn btn-danger">Sil</a>
+                *@
+                @Html.ActionLink("Sil", "SertifikaSil", new { id = x.Id }, new { @class = "btn btn-danger", onclick = "return confirm('Silmek İstediğinize Eminmisiniz')" })
+                <a href="/Sertifika/VeriGetir/@x.Id" class="btn btn-success">Güncelle</a>
+            </td>
+        </tr>
+    }
+</tbody>
+</table>
+
+<a href="/Sertifika/YeniSertifika" class="btn btn-info">Yeni Yetenek Ekle</a>

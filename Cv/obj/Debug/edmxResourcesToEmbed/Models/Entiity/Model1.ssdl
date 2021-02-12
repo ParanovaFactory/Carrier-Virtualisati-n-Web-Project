@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DbCvModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tblAbout">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="20" />
+    <Property Name="Surname" Type="varchar" MaxLength="30" />
+    <Property Name="Adderss" Type="varchar" MaxLength="100" />
+    <Property Name="Phone" Type="varchar" MaxLength="11" />
+    <Property Name="Mail" Type="varchar" MaxLength="50" />
+    <Property Name="About" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="tblAducation">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="varchar" MaxLength="50" />
+    <Property Name="SubTitle" Type="varchar" MaxLength="50" />
+    <Property Name="Departmet" Type="varchar" MaxLength="50" />
+    <Property Name="Gpa" Type="decimal" Precision="5" Scale="2" />
+  </EntityType>
+  <EntityType Name="tblAward">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Award" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="tblExperience">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="varchar" MaxLength="50" />
+    <Property Name="SubTitle" Type="varchar" MaxLength="50" />
+    <Property Name="Date" Type="varchar" MaxLength="50" />
+    <Property Name="Details" Type="varchar" MaxLength="2000" />
+  </EntityType>
+  <EntityType Name="tblInterest">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Interest" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="tblSkills">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Skill" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityContainer Name="DbCvModelStoreContainer">
+    <EntitySet Name="tblAbout" EntityType="Self.tblAbout" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblAducation" EntityType="Self.tblAducation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblAward" EntityType="Self.tblAward" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblExperience" EntityType="Self.tblExperience" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblInterest" EntityType="Self.tblInterest" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblSkills" EntityType="Self.tblSkills" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

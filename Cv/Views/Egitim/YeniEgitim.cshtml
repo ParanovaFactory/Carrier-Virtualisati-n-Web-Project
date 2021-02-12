@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "YeniEgitim";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<form class="form-group" method="post">
+    <div>
+        <label>Okul</label>
+        <input type="text" class="form-control" name="Title" />
+    </div>
+    <br />
+    <div>
+        <label>Fakülte</label>
+        <input type="text" class="form-control" name="SubTitle" />
+    </div>
+    <br />
+    <div>
+        <label>Bölüm</label>
+        <input type="text" class="form-control" name="Department" />
+    </div>
+    <br />
+    <div>
+        <label>Genel Not Ortalaması</label>
+        <input type="text" class="form-control"name="Gpa" />
+    </div>
+    <br />
+    <button class="btn btn-success">Kaydet</button>
+</form>
